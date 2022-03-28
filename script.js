@@ -9,7 +9,14 @@ let btarr=["zero",one,two,three,four,five];
 
 for(let i=1;i<6;i++){
   btarr[i].addEventListener('click', () => {
-    btarr[i].classList.add("button_clicked");
+    for(let j=1;j<6;j++){
+      if(j!==i){
+        btarr[j].classList.remove("button_clicked");
+      }
+      else{
+        btarr[i].classList.add("button_clicked");
+      }
+    }
     let a=i;
     submit.addEventListener('click', (a) =>{
     container.innerHTML+=`<div class="ratingCard thankyouCard">
